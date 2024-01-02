@@ -485,12 +485,12 @@ class TodoistCard extends LitElement {
                                     class="todoist-item-delete"
                                     @click=${() => this.itemDelete(item)}
                                 >
-                                    <ha-icon icon="mdi:trash-can-outline"></ha-icon>
+                                    <ha-icon icon="mdi:checkbox-marked-circle-outline"></ha-icon>
                                 </ha-icon-button>`
                                 : html``}
                         </div>`;
                     })
-                    : html`<div class="todoist-list-empty">No uncompleted tasks!</div>`}
+                    : html`<div class="todoist-list-empty">Nichts...</div>`}
                 ${this.config.show_completed && this.itemsCompleted
                     ? this.itemsCompleted.map(item => {
                             return html`<div class="todoist-item todoist-item-completed">
@@ -515,7 +515,7 @@ class TodoistCard extends LitElement {
                                         class="todoist-item-delete"
                                         @click=${() => this.itemDeleteCompleted(item)}
                                     >
-                                        <ha-icon icon="mdi:trash-can-outline"></ha-icon>
+                                        <ha-icon icon="mdi:checkbox-marked-circle-outline"></ha-icon>
                                     </ha-icon-button>`
                                     : html``}
                             </div>`;
@@ -550,7 +550,7 @@ class TodoistCard extends LitElement {
             .todoist-list-empty {
                 padding: 15px;
                 text-align: center;
-                font-size: 24px;
+                font-size: 2rem;
             }
             
             .todoist-item {
@@ -560,11 +560,11 @@ class TodoistCard extends LitElement {
             }
 
             .todoist-item-completed {
-                color: #808080;
+                color: green;
             }
             
             .todoist-item-text, .todoist-item-text > span {
-                font-size: 16px;
+                font-size: 1.75rem;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -587,16 +587,16 @@ class TodoistCard extends LitElement {
             }
 
             .todoist-item-completed .todoist-item-close {
-                color: #808080;
+                color: green;
             }
             
             .todoist-item-delete {
                 margin-left: auto;
-                color: #800000;
+                color: green;
             }
 
             .todoist-item-completed .todoist-item-delete {
-                color: #808080;
+                color: green;
             }
             
             .todoist-item-add {
